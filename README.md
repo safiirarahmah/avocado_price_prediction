@@ -50,6 +50,27 @@ Berikut ini variabel-variable yang terdapat dalam dataset
 - year: Tahun
 - region: Kota atau wilayah obeservasi
 
+- Mengecek informasi pada data
+  - avocado.info()
+  ![image](https://user-images.githubusercontent.com/83525234/193876299-477cc7bf-c365-428e-a24c-dfa83cb702c0.png)
+
+
+- Mengecek informasi statistik pada data
+  - diamonds.describe()
+  ![image](https://user-images.githubusercontent.com/83525234/193876753-5092bc24-7715-4a5c-8e8c-e58acbdcf194.png)
+
+- Menangani outlier dengan IQR Methode 
+
+- Univariate Analysis
+  - untuk menunjukan hubungan pada suatu fitur.
+
+- Multivariate Analysis
+  - untuk menunjukkan hubungan antara dua atau lebih variabel pada data
+
+Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
+![image](https://user-images.githubusercontent.com/83525234/193878390-97f5133d-54af-4753-b254-86cd0ec8683f.png)
+
+
 ## Data Preparation
 
 **Mengatasi Missing Value**
