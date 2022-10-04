@@ -50,6 +50,8 @@ Berikut ini variabel-variable yang terdapat dalam dataset
 - year: Tahun
 - region: Kota atau wilayah obeservasi
 
+Pada tahap ini juga dilakukan analisis dan exploratory terhadap data. 
+Berikut ini uraiannya: 
 - Mengecek informasi pada data
   - avocado.info()
   ![image](https://user-images.githubusercontent.com/83525234/193876299-477cc7bf-c365-428e-a24c-dfa83cb702c0.png)
