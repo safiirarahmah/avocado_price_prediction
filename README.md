@@ -85,6 +85,7 @@ Berikut parameter yang digunakan dalam model ini.
 ## Evaluation
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang enghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
+
 ![image](https://user-images.githubusercontent.com/83525234/193869594-7c27fdd3-ad08-41f9-a3dc-7da940223a87.png)
 
 - dimana:
@@ -95,6 +96,7 @@ Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Me
 Penerapan dalam metode pengembangan model, yaitu melakukan evaluasi menggunakan metrik _mean squared error_ pada model diperoleh hasil sebagai berikut:
 
 Hasil visualisasi Root Mean Square Error (MSE)
+
 ![image](https://user-images.githubusercontent.com/83525234/193869468-7acda4e2-0138-4154-9ca7-bb332a2b0e56.png)
 
 Berdasarkan visulalisasi di atas dapat dilihat MSE pada aloritma KNN menunjukkan nilai paling kecil yang artinya memiliki kesalahan paling kecil. Dan menunjukkan prediksi paling sesuai.
