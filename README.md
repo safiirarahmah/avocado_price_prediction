@@ -32,9 +32,11 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar dapat menj
 | Informasi | Keterangan |
 | --------- | --------------------------------------------------------------------- |
 | Link | https://www.kaggle.com/datasets/smokingkrils/avacado-price-prediction |
-
-Dataset yang saya gunakan merupakan dataset mengenai Avocado atau buah alpukat.
-Berikut ini variabel-variable yang terdapat dalam dataset
+| Nama Dataset | Avocado Price Prediction |
+| Usability | 7.06 |
+| Jumlah Data | 18249 |
+| Jumlah Kolom | 14 |
+| Jumlah fitur | 13 |
 
 - Date: Tanggal Observasi
 - AveragePrice: Harga Rata-rata satu buah Alpukat
@@ -65,9 +67,13 @@ Berikut ini uraiannya:
 
 - Univariate Analysis
   - untuk menunjukan hubungan pada suatu fitur.
+  ![image](https://user-images.githubusercontent.com/83525234/193973858-f51adc67-2b28-4b95-9b3e-3d9df7403633.png)
+
 
 - Multivariate Analysis
   - untuk menunjukkan hubungan antara dua atau lebih variabel pada data
+  ![image](https://user-images.githubusercontent.com/83525234/193973993-3fb0aa57-11c9-479b-aacf-8a1e923a3c42.png)
+
 
 Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 ![image](https://user-images.githubusercontent.com/83525234/193878390-97f5133d-54af-4753-b254-86cd0ec8683f.png)
