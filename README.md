@@ -122,7 +122,20 @@ Menghapus data non numerik serta menghapus data yang tidak dibutuhkan. Hal ini b
 
 **Split Dataset**
 
-Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. Data _training_ digunakan untuk pelatihan model, sedangkan data _testing_ digunakan untuk memvalidasi performa dan akurasi model setelah pelatihan. Untuk pembagian dataset pada proyek ini, saya membaginya menjadi 80% data _training_ dan 20% data _training_.
+Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. Data _training_ digunakan untuk pelatihan model, sedangkan data _testing_ digunakan untuk memvalidasi performa dan akurasi model setelah pelatihan. Untuk pembagian dataset pada proyek ini, saya membaginya menjadi 80% data _training_ dan 20% data _testing_.
+
+Split data harus dilakukan sebelum proses transformasi dan normalisasi. Karena data uji (_testing_) berperan sebagai data baru, kita perlu melakukan semua proses transformasi dalam data latih. Oleh karenanya membagi datasetadalah proses pertama sebelum melakukan transformasi apa pun. Tujuannya adalah agar kita tidak mengotori data uji dengan informasi yang kita dapat dari data latih. Jika melakukan proses normalisasi sebelum training maka berpotensi menimbulkan kebocoran data (_data leakage_).
+
+![image](https://user-images.githubusercontent.com/83525234/194011722-49ba2422-d420-426a-b2d8-9610037c3b80.png)
+
+
+**Normalisasi**
+
+Normalisasi data merupakan proses membuat variabel-variabel yang ada memiliki rentang nilai yang sama.
+Pada kasus ini dilakukan dengan mentransformasi pada fitur yang akan dipelajari oleh model menggunakan _library MinMaxScaler_. MinMax merupakan metode normalisasi yang bersifat liner dengan data aslinya. _Library MinMaxScaler_ melakukan skala dan transformasi pada setiap fitur secara individual sehingga berada dalam rentang yang diberikan pada set pelatihan, _library_ ini memiliki range default antara 0 dan 1. Normalisasi bertujuan agar model dapat mengenali pola-pola pada data sehingga menghasilkan prediksi lebih baik.
+
+![image](https://user-images.githubusercontent.com/83525234/194011591-0bf6e9f8-1426-4cc0-9509-c154c1f3c5f1.png)
+
 
 ## Modeling
 
@@ -139,8 +152,8 @@ Algoritma random forest merupakan salah satu algoritma supervised learning. Rand
 Random forest merupakan salah satu algoritma yang sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni. Parameter yang digunakan pada kasus ini sebagai berikut:
 
 - n_estimator: jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
-- max_depth: kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan.
-- random_state: digunakan untuk mengontrol random number generator yang digunakan.
+- max_depth: kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan. Untuk kasus ini digunakan max_depth=16.
+- random_state: digunakan untuk mengontrol random number generator yang digunakan. nilai untuk random_tate pada kasus ini random_state=55.
 - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
 
 **Boosting**
@@ -148,8 +161,8 @@ Random forest merupakan salah satu algoritma yang sering digunakan karena cukup 
 Algoritma Boosting bekerja dengan membangun model dari data latih. Kemudian algoritma ini akan membuat model kedua untuk memperbaiki kesalahan dari model pertama. Model akan ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. Algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi. Caranya dengan menggabungkan beberapa model yang sederhana dan dianggap lemah (weak learners) untuk membentuk suatu model yang kuat (strong ensemble learner).
 Berikut parameter yang digunakan dalam model ini.
 
-- learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.
-- random_state: digunakan untuk mengontrol random number generator yang digunakan.
+- learning*rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting. \_Learning rate* pada kasus ini learning_rate=0.05.
+- random*state: digunakan untuk mengontrol random number generator yang digunakan. Untuk kasus ini \_random state* sebesar random_state=55.
 
 ## Evaluation
 
@@ -169,6 +182,7 @@ Hasil visualisasi Root Mean Square Error (MSE)
 ![image](https://user-images.githubusercontent.com/83525234/193869468-7acda4e2-0138-4154-9ca7-bb332a2b0e56.png)
 
 Tabel Hasil Prediksi
+
 ![image](https://user-images.githubusercontent.com/83525234/193977432-924a212e-3ccf-4d1a-a7b1-0a0b64378b49.png)
 
 Berdasarkan visualisasi di atas dapat dilihat MSE pada algoritma KNN menunjukkan nilai paling kecil yang artinya memiliki kesalahan paling kecil. Dan menunjukkan prediksi paling sesuai.
