@@ -110,7 +110,7 @@ Tujuannya dari proses _missing value_ yaitu agar dataset menjadi bersih dari fit
  
    ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
  
-   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur Average Price.
+   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur _Average Price_. Menggunakan cara yang sama ditemukan pula outlier pada beberapa   fitur numerik lain yaitu pada _Total Bags_ dan _Small Bags_.
    
  - Mengatasi Outlier dengan metode IQR 
    Untuk mengatasi _outlier_ pda proyek ini digunakan teknik _IQR Method_. Cara kerja dari _IQR Method_ yaitu dengan menghapus data yang berada diluar _interquartile range_. Interquartile adalah range diantara kuartil pertama(25%) dan kuartil ketiga(75%).
