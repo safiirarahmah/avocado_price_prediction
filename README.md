@@ -87,8 +87,16 @@ Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 
 Tujuannya dari proses proses missing value yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
 
-- Metode yang digunakan dalam laporan ini untuk mengatasi missing value adalah
-- Hasil
+- Mendeteksi fitur yang meiliki value 0
+
+  ![image](https://user-images.githubusercontent.com/83525234/193991693-123e148b-376d-45b6-af34-84434a9f8dfd.png)
+  
+  Berdasarkan data diatas dapat dilihat bahwa terdapat fitur yang memiliki missing value. Data diatas sangat menarik karena menunjukkan hubungan antara  fitur _Total Bags_, _Small Bags_ serta _Large Bags_.
+
+- Menangani Missing Value dengan menghapus fitur yang bernilai 0
+
+  ![image](https://user-images.githubusercontent.com/83525234/193992198-962e3631-d8d0-48e3-8d5a-b2146ee5f0dc.png)
+
 
 **Menanganni _oulier_**
 
