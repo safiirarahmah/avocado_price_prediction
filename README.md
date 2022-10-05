@@ -29,6 +29,8 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi ac
 ## Data Understanding
 
 **Informasi Dataset**
+
+Tabel 1. Informasi dataset
 | Informasi | Keterangan |
 | --------- | --------------------------------------------------------------------- |
 | Link | https://www.kaggle.com/datasets/smokingkrils/avacado-price-prediction |
@@ -60,15 +62,28 @@ Berikut ini uraiannya:
 
 - Mengecek informasi pada data
 
-  - avocado.info()
+  Tabel 2. Informasi pada Data
 
-  ![image](https://user-images.githubusercontent.com/83525234/193876299-477cc7bf-c365-428e-a24c-dfa83cb702c0.png)
+  | #   | Column       | Non-Null Count | Dtype   |
+  | --- | ------------ | -------------- | ------- |
+  | 1   | Date         | 18249 non-null | int64   |
+  | 2   | AveragePrice | 18249 non-null | object  |
+  | 3   | Total Volume | 18249 non-null | float64 |
+  | 4   | 4046         | 18249 non-null | float64 |
+  | 5   | 4225         | 18249 non-null | float64 |
+  | 6   | 4770         | 18249 non-null | float64 |
+  | 7   | Total Bags   | 18249 non-null | float64 |
+  | 8   | Small Bags   | 18249 non-null | float64 |
+  | 9   | Large Bags   | 18249 non-null | float64 |
+  | 10  | XLarge Bags  | 18249 non-null | float64 |
+  | 11  | type         | 18249 non-null | object  |
+  | 12  | year         | 18249 non-null | object  |
+  | 13  | region       | 18249 non-null | int64   |
+
+  dtypes: float64(9), int64(2), object(3)
+  memory usage: 1.9+ MB
 
 - Mengecek informasi statistik pada data
-
-  - diamonds.describe()
-
-  ![image](https://user-images.githubusercontent.com/83525234/193876753-5092bc24-7715-4a5c-8e8c-e58acbdcf194.png)
 
 - Menangani _outlier_ dengan _IQR Methode_
 
@@ -77,51 +92,56 @@ Berikut ini uraiannya:
   - untuk menunjukan hubungan pada suatu fitur.
 
   ![image](https://user-images.githubusercontent.com/83525234/193973858-f51adc67-2b28-4b95-9b3e-3d9df7403633.png)
+  Gambar 1. Histogram Univariate Analysis
 
 - Multivariate Analysis
 
   - untuk menunjukkan hubungan antara dua atau lebih variabel pada data
 
   ![image](https://user-images.githubusercontent.com/83525234/193973993-3fb0aa57-11c9-479b-aacf-8a1e923a3c42.png)
+  Gambar 2. Histogram Multivariate Analysis
 
 Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 
 ![image](https://user-images.githubusercontent.com/83525234/193878390-97f5133d-54af-4753-b254-86cd0ec8683f.png)
+Gambar 3. Matrik Korelasi Untuk Fitur Numerik
 
 ## Data Preparation
 
 **Mengatasi Missing Value**
 
-Tujuannya dari proses _missing value_ yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
+Tujuan dari proses _missing value_ yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
 
 - Mendeteksi fitur yang memiliki value 0
 
   ![image](https://user-images.githubusercontent.com/83525234/193991693-123e148b-376d-45b6-af34-84434a9f8dfd.png)
+  Gambar 4. Fitur _Total Bags_ dengan _value_ 0
 
   Berdasarkan data diatas dapat dilihat bahwa terdapat fitur yang memiliki missing value. Data diatas sangat menarik karena menunjukkan hubungan antara fitur _Total Bags_, _Small Bags_ serta _Large Bags_.
 
-- Menangani Missing Value dengan menghapus fitur yang bernilai 0
+- Menangani _Missing Value_ dengan menghapus fitur yang bernilai 0
 
-  ![image](https://user-images.githubusercontent.com/83525234/193992198-962e3631-d8d0-48e3-8d5a-b2146ee5f0dc.png)
+Karena terdapat hubungan value yang berniali 0 antara fitur _Total Bags_, _Small Bags_ serta _Large Bags_. Maka sampel dengan nilai 0 pada _Total Bags_, _Small Bags_ dan _Large Bags_ akan dihapus.
 
 **Menangani _oulier_**
 
 - Memvisualisasikan data Avocado dengan boxplot untuk mendeteksi _outliers_ pada beberapa fitur numerik.
 
   ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
+  Gambar 5. Outlier pada fitur Average Price
 
   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur _Average Price_. Menggunakan cara yang sama ditemukan pula outlier pada beberapa fitur numerik lain yaitu pada _Total Bags_ dan _Small Bags_.
 
 - Mengatasi _Outlier_ dengan _IQR Method_
   Untuk mengatasi _outlier_ pada proyek ini digunakan teknik _IQR Method_. Cara kerja dari _IQR Method_ yaitu dengan menghapus data yang berada diluar _interquartile range_. Interquartile adalah range diantara kuartil pertama(25%) dan kuartil ketiga(75%).
 
-  ![image](https://user-images.githubusercontent.com/83525234/193990096-0074dc2c-7b16-4b87-8ac8-67f3d2821a5e.png)
+cara kerjanya cukup, teknik library
 
 **Drop data**
 
-Menghapus data non numerik serta menghapus data yang tidak dibutuhkan. Hal ini bertujuan agar model dapat dilatih untuk memprediksi data dengan baik dan mendapatkan hasil prediksi dengan akurasi tinggi.
-
-![image](https://user-images.githubusercontent.com/83525234/193994042-3ed1235d-2c75-4c6d-bac9-4bc86c7aa7bc.png)
+Drop data atau menghapus data yang tidak dibutuhkan. Pada proyek ini data yang terdapat beberapa fitur yang dihapus dari dataset.
+Untuk fitur numerik XLarge dan year dihapus karena memiliki nilai korelasi yang sangat rendah terhadap model. Sedangkan fitur date, type dan region dihapus karena memiliki type data string sehingga tidak dapat diproses model.
+Proses Drop data ini bertujuan agar model dapat dilatih dengan baik untuk memprediksi data dengan hasil prediksi yang memiliki akurasi tinggi. fungs yang digunakan.
 
 **Split Dataset**
 
@@ -129,16 +149,11 @@ Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. 
 
 Split data harus dilakukan sebelum proses transformasi dan normalisasi. Karena data uji (_testing_) berperan sebagai data baru, kita perlu melakukan semua proses transformasi dalam data latih. Oleh karenanya membagi datasetadalah proses pertama sebelum melakukan transformasi apa pun. Tujuannya adalah agar kita tidak mengotori data uji dengan informasi yang kita dapat dari data latih. Jika melakukan proses normalisasi sebelum training maka berpotensi menimbulkan kebocoran data (_data leakage_).
 
-![image](https://user-images.githubusercontent.com/83525234/194011722-49ba2422-d420-426a-b2d8-9610037c3b80.png)
-
-
 **Normalisasi**
 
 Normalisasi data merupakan proses membuat variabel-variabel yang ada memiliki rentang nilai yang sama.
-Pada kasus ini dilakukan dengan mentransformasi pada fitur yang akan dipelajari oleh model menggunakan _library MinMaxScaler_. MinMax merupakan metode normalisasi yang bersifat liner dengan data aslinya. _Library MinMaxScaler_ melakukan skala dan transformasi pada setiap fitur secara individual sehingga berada dalam rentang yang diberikan pada set pelatihan, _library_ ini memiliki range default antara 0 dan 1. Normalisasi bertujuan agar model dapat mengenali pola-pola pada data sehingga menghasilkan prediksi lebih baik.
-
-![image](https://user-images.githubusercontent.com/83525234/194011591-0bf6e9f8-1426-4cc0-9509-c154c1f3c5f1.png)
-
+Pada kasus ini saya mentransformasi 'x*train' menggunakan fungsi .fit_transform() dari \_library MinMaxScaler*.
+MinMax merupakan metode normalisasi yang bersifat liner dengan data aslinya. _Library MinMaxScaler_ melakukan skala dan transformasi pada setiap fitur secara individual sehingga berada dalam rentang yang diberikan pada set pelatihan, _library_ ini memiliki range default antara 0 dan 1. Normalisasi bertujuan agar model dapat mengenali pola-pola pada data sehingga menghasilkan prediksi lebih baik.
 
 ## Modeling
 
@@ -147,11 +162,13 @@ Dalam tahap Development model pada studi kasus prediksi harga alpukat ini, Algor
 **K-Nearest Neighbor**
 
 Algoritma K-NN merupakan algoritma yang cara kerjanya yaitu membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat. Algoritma KNN menggunakan kemiripan data baru dengan data tetangga terdekat untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. KNN ini dapat digunakan untuk kasus regresi dan klasifikasi. Pada model ini digunakan satu parameter yaitu _n-neighbors_ atau jumlah tetangga. Untuk kasus ini saya menggunakan 5 neighbors.
+
 - Keuntungan
+
   - sederhana dan mudah dipahami
   - mudah digunakan
   - parameter sedikit
- 
+
 - Kelemahan
   - Jumlah fitur atau dimensi yang besar
   - Memakan waktu lama jika dataset sangat besar
@@ -168,10 +185,11 @@ Random forest merupakan salah satu algoritma yang sering digunakan karena cukup 
 - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
 
 * Keuntungan
+
   - cukup sederhana namun memiliki stabilitas yang baik.
   - Dapat digunkan dengan baik pada dataset berukuran besar.
   - memiliki pengklasifiksian yang akurat.
- 
+
 * Kelemahan
   - Overviting untuk kumpulan data yang mengandung noise.
   - Tidak bisa memperbaiki model yang dihasilkan secara berulang.
@@ -184,20 +202,20 @@ Berikut parameter yang digunakan dalam model ini.
 - learning*rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting. \_Learning rate* pada kasus ini learning_rate=0.05.
 - random*state: digunakan untuk mengontrol random number generator yang digunakan. Untuk kasus ini \_random state* sebesar random_state=55.
 
-* Keuntungan 
+* Keuntungan
+
   - sangat powerful dalam meningkatkan akurasi prediksi
   - Mudah diimplementasikan.
- 
+
 * Kelemahan
   - Overviting untuk kumpulan data yang mengandung noise.
   - Waktu komputasi yang lama.
-  
-  
+
 ## Evaluation
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
 
-![image](https://user-images.githubusercontent.com/83525234/193869594-7c27fdd3-ad08-41f9-a3dc-7da940223a87.png)
+------Tulis ulang formulanya-----
 
 - dimana:
   - At = Nilai Aktual permintaan
@@ -206,12 +224,19 @@ Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Me
 
 Penerapan dalam metode pengembangan model, yaitu melakukan evaluasi menggunakan metrik _mean squared error_ pada model diperoleh hasil sebagai berikut:
 
-Hasil visualisasi Root Mean Square Error (MSE)
+Hasil visualisasi _Mean Square Error_ (MSE)
 
 ![image](https://user-images.githubusercontent.com/83525234/193869468-7acda4e2-0138-4154-9ca7-bb332a2b0e56.png)
+Gambar 6. visualisasi _Mean Square Error_
 
-Tabel Hasil Prediksi
+Dari visualisasi di atas dapat dilihat MSE pada algoritma KNN menunjukkan nilai paling kecil yang artinya memiliki kesalahan paling kecil dibandingkan dengan algoritma _random forest_ dan _boosting_.
 
-![image](https://user-images.githubusercontent.com/83525234/193977432-924a212e-3ccf-4d1a-a7b1-0a0b64378b49.png)
+Tabel 3. Hasil Prediksi
 
-Berdasarkan visualisasi di atas dapat dilihat MSE pada algoritma KNN menunjukkan nilai paling kecil yang artinya memiliki kesalahan paling kecil. Dan menunjukkan prediksi paling sesuai.
+|      | ytrue | prediksi_KNN | prediksi_RF | prediksi_Boosting |
+| ---- | ----- | ------------ | ----------- | ----------------- |
+| 7295 | 1.44  | 1.4          | 1.3         | 1.1               |
+
+Pada Tabel 3 memberikan hasil nilai prediksi dari algoritma KNN paling bik dan mendekati nilai sebenarnya.
+
+Berdasarkan uraian pada laporan di atas, dapat disimpulkan bahwa model yang telah dibuat dapat memprediksi harga alpukat, dan hasil prediksi terbaik yaitu menggunakan algoritma KNN yang memiliki nilai paling mendekati nilai sebenarnya.
