@@ -13,11 +13,11 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi ac
 
 ### Problem Statement
 
-- Dengan dataset yang dimiliki bagaimana cara mengembangkan model machine learning untuk memprediksi harga alpukat?
+- Dengan dataset yang dimiliki bagaimana cara mengembangkan model _machine learning_ untuk memprediksi harga alpukat?
 
 ### Goals
 
-- Membuat model machine learning yang mampu mempredikasi harga alpukat dengan baik.
+- Membuat model _machine learning_ yang mampu mempredikasi harga alpukat dengan baik.
 
 ### Solution approach
 
@@ -65,7 +65,7 @@ Berikut ini uraiannya:
   - diamonds.describe()
   ![image](https://user-images.githubusercontent.com/83525234/193876753-5092bc24-7715-4a5c-8e8c-e58acbdcf194.png)
 
-- Menangani outlier dengan IQR Methode 
+- Menangani _outlier_ dengan _IQR Methode_ 
 
 - Univariate Analysis
   - untuk menunjukan hubungan pada suatu fitur.
@@ -85,7 +85,7 @@ Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 
 **Mengatasi Missing Value**
 
-Tujuannya dari proses proses missing value yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
+Tujuannya dari proses _missing value_ yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
 
 - Mendeteksi fitur yang meiliki value 0
 
@@ -115,6 +115,9 @@ Tujuannya dari proses proses missing value yaitu agar dataset menjadi bersih dar
 
 
 **Drop data**
+Menghapus data non mumerik serta menghapus data yang tidak dibutuhkan. Hal ini bertujuan agar model dapat dilatih untuk memprediksi data dengan baik dan mendapatkan hasil prediksi dengan akurasi tinggi.
+
+![image](https://user-images.githubusercontent.com/83525234/193994042-3ed1235d-2c75-4c6d-bac9-4bc86c7aa7bc.png)
 
 
 **Split Dataset**
