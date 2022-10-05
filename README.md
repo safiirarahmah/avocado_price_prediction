@@ -84,18 +84,26 @@ Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 ## Data Preparation
 
 **Mengatasi Missing Value**
+
 Tujuannya dari proses proses missing value yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
 
 - Metode yang digunakan dalam laporan ini untuk mengatasi missing value adalah
 - Hasil
 
-**Menanganni oulier**
+**Menanganni _oulier_**
+
  - Memvisualisasikan data Avocado dengan boxplot untuk mendeteksi _outliers_ pada beberapa fitur numerik.
- ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
+ 
+   ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
+ 
    Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur Average Price.
    
  - Mengatasi Outlier dengan metode IQR 
- ![image](https://user-images.githubusercontent.com/83525234/193989014-ef8a4c2f-8103-4a30-a628-90607c363e2a.png)
+   Untuk mengatasi _outlier_ pda proyek ini digunakan teknik _IQR Method_. Cara kerja dari _IQR Method_ yaitu dengan menghapus data yang berada diluar _interquartile range_. Interquartile adalah range diantara kuartil pertama(25%) dan kuartil ketiga(75%).
+   
+   ![image](https://user-images.githubusercontent.com/83525234/193990096-0074dc2c-7b16-4b87-8ac8-67f3d2821a5e.png)
+
+ 
 
 
 **Drop data**
