@@ -38,6 +38,9 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi ac
 | Jumlah Kolom | 14 |
 | Jumlah fitur | 13 |
 
+Dataset yang saya gunakan merupakan dataset mengenai Avocado atau buah alpukat.
+Berikut ini variabel-variable yang terdapat dalam dataset
+
 - Date: Tanggal Observasi
 - AveragePrice: Harga Rata-rata satu buah Alpukat
 - Total Volume: Jumlah Alpukat yang terjual
@@ -144,7 +147,15 @@ Dalam tahap Development model pada studi kasus prediksi harga alpukat ini, Algor
 **K-Nearest Neighbor**
 
 Algoritma K-NN merupakan algoritma yang cara kerjanya yaitu membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat. Algoritma KNN menggunakan kemiripan data baru dengan data tetangga terdekat untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. KNN ini dapat digunakan untuk kasus regresi dan klasifikasi. Pada model ini digunakan satu parameter yaitu _n-neighbors_ atau jumlah tetangga. Untuk kasus ini saya menggunakan 5 neighbors.
-Keuntungan menggunakan Algoritma ini adalah mudah dipahami dan digunakan. Sedangkan kelemahannya adalah pada jumlah fitur dan dimensi yang besar jumlah sampel akan meningkat secara eksponensial.
+- Keuntungan
+  - sederhana dan mudah dipahami
+  - mudah digunakan
+  - parameter sedikit
+ 
+- Kelemahan
+  - Jumlah fitur atau dimensi yang besar
+  - Memakan waktu lama jika dataset sangat besar
+  - Jumlah sample meningkat secara exponensial seiring dengan jumlah dimensi.
 
 **Random Forest**
 
@@ -156,6 +167,15 @@ Random forest merupakan salah satu algoritma yang sering digunakan karena cukup 
 - random_state: digunakan untuk mengontrol random number generator yang digunakan. nilai untuk random_tate pada kasus ini random_state=55.
 - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
 
+* Keuntungan
+  - cukup sederhana namun memiliki stabilitas yang baik.
+  - Dapat digunkan dengan baik pada dataset berukuran besar.
+  - memiliki pengklasifiksian yang akurat.
+ 
+* Kelemahan
+  - Overviting untuk kumpulan data yang mengandung noise.
+  - Tidak bisa memperbaiki model yang dihasilkan secara berulang.
+
 **Boosting**
 
 Algoritma Boosting bekerja dengan membangun model dari data latih. Kemudian algoritma ini akan membuat model kedua untuk memperbaiki kesalahan dari model pertama. Model akan ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. Algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi. Caranya dengan menggabungkan beberapa model yang sederhana dan dianggap lemah (weak learners) untuk membentuk suatu model yang kuat (strong ensemble learner).
@@ -164,6 +184,15 @@ Berikut parameter yang digunakan dalam model ini.
 - learning*rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting. \_Learning rate* pada kasus ini learning_rate=0.05.
 - random*state: digunakan untuk mengontrol random number generator yang digunakan. Untuk kasus ini \_random state* sebesar random_state=55.
 
+* Keuntungan 
+  - sangat powerful dalam meningkatkan akurasi prediksi
+  - Mudah diimplementasikan.
+ 
+* Kelemahan
+  - Overviting untuk kumpulan data yang mengandung noise.
+  - Waktu komputasi yang lama.
+  
+  
 ## Evaluation
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
