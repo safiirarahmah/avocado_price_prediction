@@ -2,11 +2,12 @@
 
 ## Project Overview
 
-Indonesia merupakan negara agraris yang mengamdalkan pertanian sebagai salah satu sektor matapencaharian terbesar bagi warga negaranya. Tanahnya yang luas dan Letaknya yang berada di wilayah tropis membuat berbagai tanaman tubuh subur di negara kita. Kondisi ini merupakan peluang besar bagi indonesia untuk menjadi negara produsen.
+Indonesia merupakan negara agraris yang mengandalkan pertanian sebagai salah satu sektor matapencaharian terbesar bagi warga negaranya. Tanahnya yang luas dan Letaknya yang berada di wilayah tropis membuat berbagai tanaman tubuh subur di negara kita. Kondisi ini merupakan peluang besar bagi indonesia untuk menjadi negara produsen.
 
-Alpukat merupakan salah satu buah yang banyak digemari masyarakat, tidak hanya di indonesia namun juga seluruh dunia. Berdasarkan data dari _Food and Agriculture Organization (FAO)_ tahun 2019, Indonesia menempati peringkat ke 5 negara penghasil alpukat terbesar didunia. Ini menujukkan bahwa sektor pertanian alpukat di Indonesia sudah cukup besar. Namun terkadang terdapat harga dipasaran tidak selalu stabil. Oleh karenanya dibutuhkan sistem untuk yang dapat memprediksi harga alpukat.
+Alpukat merupakan salah satu buah yang banyak digemari masyarakat, tidak hanya di indonesia namun juga seluruh dunia. Berdasarkan data dari _Food and Agriculture Organization (FAO)_ tahun 2019, Indonesia menempati peringkat ke 5 negara penghasil alpukat terbesar didunia. Ini menujukkan bahwa sektor pertanian alpukat di Indonesia sudah cukup besar. Namun terkadang terdapat kendala dimana harga dipasaran tidak selalu stabil. Oleh karenanya dibutuhkan sistem yang dapat memprediksi harga alpukat.
 
-Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar dapat menjadi acuan dan pertimbangan petani Indonesia dalam menetapkan harga ataupun dalam merancang strategi produksi. Dengan perkiraan harga tersebut petani dapat merancang stategi agar tidak mengalami kerugian dan serta meningkatkan keuntungan yang didapat.
+Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi acuan dan pertimbangan petani Indonesia dalam menetapkan harga ataupun dalam merancang strategi produksi. Dengan perkiraan harga tersebut petani dapat merancang strategi agar tidak mengalami kerugian dan serta meningkatkan keuntungan yang didapat.
+
 
 ## Business Understanding
 
@@ -22,9 +23,10 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar dapat menj
 
 - Solusi yang diterapkan untuk dalam proyek ini adalah dengan membuat model regresi untuk memprediksi bilangan kontinue yang sesuai dengan permasalahan agar menghasilkan prediksi harga alpukat yang akurat.
 - Algoritma yang digunakan untuk menyelesaikan kasus ini adalah sebagai berikut :
-  - K-Nearest Neighbours
-  - Random Forest
-  - Boosting
+  - _K-Nearest Neighbors_
+  - _Random Forest_
+  - _Boosting_
+
 
 ## Data Understanding
 
@@ -127,5 +129,8 @@ Penerapan dalam metode pengembangan model, yaitu melakukan evaluasi menggunakan 
 Hasil visualisasi Root Mean Square Error (MSE)
 
 ![image](https://user-images.githubusercontent.com/83525234/193869468-7acda4e2-0138-4154-9ca7-bb332a2b0e56.png)
+
+Tabel Hasil Prediksi
+![image](https://user-images.githubusercontent.com/83525234/193977432-924a212e-3ccf-4d1a-a7b1-0a0b64378b49.png)
 
 Berdasarkan visulalisasi di atas dapat dilihat MSE pada aloritma KNN menunjukkan nilai paling kecil yang artinya memiliki kesalahan paling kecil. Dan menunjukkan prediksi paling sesuai.
