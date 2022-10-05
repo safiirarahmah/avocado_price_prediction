@@ -58,6 +58,7 @@ Pada tahap ini juga dilakukan analisis dan exploratory terhadap data.
 Berikut ini uraiannya: 
 - Mengecek informasi pada data
   - avocado.info()
+  - 
   ![image](https://user-images.githubusercontent.com/83525234/193876299-477cc7bf-c365-428e-a24c-dfa83cb702c0.png)
 
 
@@ -112,16 +113,17 @@ Tujuannya dari proses _missing value_ yaitu agar dataset menjadi bersih dari fit
    ![image](https://user-images.githubusercontent.com/83525234/193990096-0074dc2c-7b16-4b87-8ac8-67f3d2821a5e.png)
 
  
-
-
 **Drop data**
+
 Menghapus data non mumerik serta menghapus data yang tidak dibutuhkan. Hal ini bertujuan agar model dapat dilatih untuk memprediksi data dengan baik dan mendapatkan hasil prediksi dengan akurasi tinggi.
 
 ![image](https://user-images.githubusercontent.com/83525234/193994042-3ed1235d-2c75-4c6d-bac9-4bc86c7aa7bc.png)
 
 
 **Split Dataset**
+
 Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. Data _training_ digunakan untuk pelatihan model, sedangakan data _testing_ digunakan untuk memvalidasi performa dan akurasi model setelah pelatihan. Untuk pembagian dataset pada proyek ini, saya membaginya menjadi 80% data _training_ dan 20% data _training_.
+
 
 ## Modeling
 
