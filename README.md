@@ -40,6 +40,7 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi ac
 | Jumlah Kolom | 14 |
 | Jumlah fitur | 13 |
 
+
 - Date: Tanggal Observasi
 - AveragePrice: Harga Rata-rata satu buah Alpukat
 - Total Volume: Jumalah Alpukat yang terjual
@@ -58,27 +59,31 @@ Pada tahap ini juga dilakukan analisis dan exploratory terhadap data.
 Berikut ini uraiannya: 
 - Mengecek informasi pada data
   - avocado.info()
-  - 
+  
   ![image](https://user-images.githubusercontent.com/83525234/193876299-477cc7bf-c365-428e-a24c-dfa83cb702c0.png)
 
 
 - Mengecek informasi statistik pada data
   - diamonds.describe()
+  
   ![image](https://user-images.githubusercontent.com/83525234/193876753-5092bc24-7715-4a5c-8e8c-e58acbdcf194.png)
 
 - Menangani _outlier_ dengan _IQR Methode_ 
 
 - Univariate Analysis
   - untuk menunjukan hubungan pada suatu fitur.
+  
   ![image](https://user-images.githubusercontent.com/83525234/193973858-f51adc67-2b28-4b95-9b3e-3d9df7403633.png)
 
 
 - Multivariate Analysis
   - untuk menunjukkan hubungan antara dua atau lebih variabel pada data
+  
   ![image](https://user-images.githubusercontent.com/83525234/193973993-3fb0aa57-11c9-479b-aacf-8a1e923a3c42.png)
 
 
 Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
+
 ![image](https://user-images.githubusercontent.com/83525234/193878390-97f5133d-54af-4753-b254-86cd0ec8683f.png)
 
 
@@ -130,10 +135,12 @@ Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. 
 Dalam tahap Development model pada studi kasus prediksi harga alpukat ini, Algoritma machine learning yang saya gunakan sebagai solusi untuk memprediksi harga alpukat diantaranya sebagai berikut:
 
 **K-Nearest Neighbour**
+
 Algortma K-NN merupakan algoritma yang cara kerjanya yaitu membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat. Algoritma KNN menggunakan kmiripan data baru dengan data tetangga terdekat untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. KNN ini dapat digunakan untuk kasus regresi dan klasifikasi. Pada model ini digunakan satu paramenter yaitu _n-neighbours_ atau jumlah tetangga. Untuk kasus ini saya menggunakan 5 neighbours.
 Keuntungan menggunakan Algoritma ini adalah mudah dipahami dan digunakan. Sedangkan kelemahannya adalah pada jumlah fitur dan dimensi yang besar jumlah sample akan meningkat secara eksponensial.
 
 **Random Forest**
+
 Algoritma random forest merupakan salah satu algoritma supervised learning. Random forest termasuk ke dalam model ensamble group learning. Model ini terdiri dari sekelompok model yang bekerja secara bersama sama untuk menyelesaikan masalah. Pada model ansemble setiap model harus membuat prediksi secara independent, kemudian prediksi dari tiap model ini digabungkan untuk membuat prediksi akhir. Sehingga tingkat keberhasilan akan lebih tinggi dibanding model bekerja sendiri. Algoritma ini digunakan untuk menyelesaikan masalah klasifikasi dan regresi.
 Random forest merupakan salah satu algoritma yang sering digunakan karena cukup sederhana tetapi memilikistabilitas yang mumpuni. Parameter yang digunakan pada kasus ini sebagai berikut:
 
@@ -143,11 +150,13 @@ Random forest merupakan salah satu algoritma yang sering digunakan karena cukup 
 - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
 
 **Boosting**
+
 Algoritma Boosting bekerja dengan membangun model dari data latih. Kemudian algoritma ini akan membuat model kedua untuk memperbaiki kesalahan dari model pertama. Model akan ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. Algortima ini bertujuan untuk meningkatkan performa atau akurasi prediksi. Caranya dengan menggabungkan beberapa model yang sederhana dan dianggap lemah (weak learners) untuk membentuk suatu model yang kuat (strong ensemble learner).
 Berikut parameter yang digunakan dalam model ini.
 
 - learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.
 - random_state: digunakan untuk mengontrol random number generator yang digunakan.
+
 
 ## Evaluation
 
