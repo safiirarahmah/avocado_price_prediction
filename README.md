@@ -86,6 +86,21 @@ Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 **Mengatasi Missing Value**
 Tujuannya dari proses proses missing value yaitu agar dataset menjadi bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik.
 
+- Metode yang digunakan dalam laporan ini untuk mengatasi missing value adalah
+- Hasil
+
+**Menanganni oulier**
+ - Memvisualisasikan data Avocado dengan boxplot untuk mendeteksi _outliers_ pada beberapa fitur numerik.
+ ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
+   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur Average Price.
+   
+ - Mengatasi Outlier dengan metode IQR 
+ ![image](https://user-images.githubusercontent.com/83525234/193989014-ef8a4c2f-8103-4a30-a628-90607c363e2a.png)
+
+
+**Drop data**
+
+
 **Split Dataset**
 Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. Data _training_ digunakan untuk pelatihan model, sedangakan data _testing_ digunakan untuk memvalidasi performa dan akurasi model setelah pelatihan. Untuk pembagian dataset pada proyek ini, saya membaginya menjadi 80% data _training_ dan 20% data _training_.
 
