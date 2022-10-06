@@ -4,7 +4,7 @@
 
 Indonesia merupakan negara agraris yang mengandalkan pertanian sebagai salah satu sektor matapencaharian terbesar bagi warga negaranya. Tanahnya yang luas dan Letaknya yang berada di wilayah tropis membuat berbagai tanaman tubuh subur di negara kita. Kondisi ini merupakan peluang besar bagi indonesia untuk menjadi negara produsen.
 
-Alpukat merupakan salah satu buah yang banyak digemari masyarakat, tidak hanya di indonesia namun juga seluruh dunia. Berdasarkan data dari _Food and Agriculture Organization (FAO)_ tahun 2019, Indonesia menempati peringkat ke 5 negara penghasil alpukat terbesar didunia. Ini menujukkan bahwa sektor pertanian alpukat di Indonesia sudah cukup besar. Namun terkadang terdapat kendala dimana harga dipasaran tidak selalu stabil. Oleh karenanya dibutuhkan sistem yang dapat memprediksi harga alpukat.
+Alpukat merupakan salah satu buah yang banyak digemari masyarakat, tidak hanya di indonesia namun juga seluruh dunia. Berdasarkan data dari _Food and Agriculture Organization (FAO)_ tahun 2019, Indonesia menempati peringkat ke 5 negara penghasil alpukat terbesar di dunia. Ini menunjukkan bahwa sektor pertanian alpukat di Indonesia sudah cukup besar. Namun terkadang terdapat kendala dimana harga dipasaran tidak selalu stabil. Oleh karenanya dibutuhkan sistem yang dapat memprediksi harga alpukat.
 
 Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi acuan dan pertimbangan petani Indonesia dalam menetapkan harga ataupun dalam merancang strategi produksi. Dengan perkiraan harga tersebut petani dapat merancang strategi agar tidak mengalami kerugian dan serta meningkatkan keuntungan yang didapat.
 
@@ -16,11 +16,11 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi ac
 
 ### Goals
 
-- Membuat model _machine learning_ yang mampu mempredikasi harga alpukat dengan baik.
+- Membuat model _machine learning_ yang mampu memprediksi harga alpukat dengan baik.
 
 ### Solution approach
 
-- Solusi yang diterapkan untuk dalam proyek ini adalah dengan membuat model regresi untuk memprediksi bilangan kontinue yang sesuai dengan permasalahan agar menghasilkan prediksi harga alpukat yang akurat.
+- Solusi yang diterapkan untuk dalam proyek ini adalah dengan membuat model regresi untuk memprediksi bilangan kontinu yang sesuai dengan permasalahan agar menghasilkan prediksi harga alpukat yang akurat.
 - Algoritma yang digunakan untuk menyelesaikan kasus ini adalah sebagai berikut :
   - _K-Nearest Neighbors_
   - _Random Forest_
@@ -93,7 +93,7 @@ Berikut ini uraiannya:
   - untuk menunjukan hubungan pada suatu fitur.
 
   ![image](https://user-images.githubusercontent.com/83525234/193973858-f51adc67-2b28-4b95-9b3e-3d9df7403633.png)
-  
+
   Gambar 1. Histogram Univariate Analysis
 
 - Multivariate Analysis
@@ -101,7 +101,7 @@ Berikut ini uraiannya:
   - untuk menunjukkan hubungan antara dua atau lebih variabel pada data
 
   ![image](https://user-images.githubusercontent.com/83525234/193973993-3fb0aa57-11c9-479b-aacf-8a1e923a3c42.png)
-  
+
   Gambar 2. Histogram Multivariate Analysis
 
 Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
@@ -109,8 +109,6 @@ Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 ![image](https://user-images.githubusercontent.com/83525234/193878390-97f5133d-54af-4753-b254-86cd0ec8683f.png)
 
 Gambar 3. Matrik Korelasi Untuk Fitur Numerik
-
-
 
 ## Data Preparation
 
@@ -134,7 +132,7 @@ Karena terdapat hubungan value yang bernilai 0 antara fitur _Total Bags_, _Small
 - Memvisualisasikan data Avocado dengan boxplot untuk mendeteksi _outliers_ pada beberapa fitur numerik.
 
   ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
-  
+
   Gambar 5. Outlier pada fitur Average Price
 
   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur _Average Price_. Menggunakan cara yang sama ditemukan pula outlier pada beberapa fitur numerik lain yaitu pada _Total Bags_ dan _Small Bags_.
@@ -142,7 +140,6 @@ Karena terdapat hubungan value yang bernilai 0 antara fitur _Total Bags_, _Small
 - Mengatasi _Outlier_ dengan _IQR Method_
 
   Untuk mengatasi _outlier_ pada proyek ini digunakan teknik _IQR Method_. Cara kerja dari _IQR Method_ yaitu dengan menghapus data yang berada diluar _interquartile range_. Interquartile adalah range diantara kuartil pertama(25%) dan kuartil ketiga(75%).
-  
 
 **Drop data**
 
@@ -150,20 +147,17 @@ Drop data atau menghapus data yang tidak dibutuhkan. Pada proyek ini data yang t
 Untuk fitur numerik XLarge dan year dihapus karena memiliki nilai korelasi yang sangat rendah terhadap model. Sedangkan fitur date, type dan region dihapus karena memiliki type data string sehingga tidak dapat diproses model.
 Proses Drop data ini bertujuan agar model dapat dilatih dengan baik untuk memprediksi data dengan hasil prediksi yang memiliki akurasi tinggi. fungsi yang digunakan.
 
-
 **Split Dataset**
 
 Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. Data _training_ digunakan untuk pelatihan model, sedangkan data _testing_ digunakan untuk memvalidasi performa dan akurasi model setelah pelatihan. Untuk pembagian dataset pada proyek ini, saya membaginya menjadi 80% data _training_ dan 20% data _testing_.
 
-Split data harus dilakukan sebelum proses transformasi dan normalisasi. Karena data uji (_testing_) berperan sebagai data baru, kita perlu melakukan semua proses transformasi dalam data latih. Oleh karenanya membagi datasetadalah proses pertama sebelum melakukan transformasi apa pun. Tujuannya adalah agar kita tidak mengotori data uji dengan informasi yang kita dapat dari data latih. Jika melakukan proses normalisasi sebelum training maka berpotensi menimbulkan kebocoran data (_data leakage_).
-
+Split data harus dilakukan sebelum proses transformasi dan normalisasi. Karena data uji (_testing_) berperan sebagai data baru, kita perlu melakukan semua proses transformasi dalam data latih. Oleh karenanya membagi dataset adalah proses pertama sebelum melakukan transformasi apa pun. Tujuannya adalah agar kita tidak mengotori data uji dengan informasi yang kita dapat dari data latih. Jika melakukan proses normalisasi sebelum training maka berpotensi menimbulkan kebocoran data (_data leakage_).
 
 **Normalisasi**
 
 Normalisasi data merupakan proses membuat variabel-variabel yang ada memiliki rentang nilai yang sama.
 Pada kasus ini saya mentransformasi 'x*train' menggunakan fungsi .fit_transform() dari \_library MinMaxScaler*.
-MinMax merupakan metode normalisasi yang bersifat liner dengan data aslinya. _Library MinMaxScaler_ melakukan skala dan transformasi pada setiap fitur secara individual sehingga berada dalam rentang yang diberikan pada set pelatihan, _library_ ini memiliki range default antara 0 dan 1. Normalisasi bertujuan agar model dapat mengenali pola-pola pada data sehingga menghasilkan prediksi lebih baik.
-
+MinMax merupakan metode normalisasi yang bersifat linier dengan data aslinya. _Library MinMaxScaler_ melakukan skala dan transformasi pada setiap fitur secara individual sehingga berada dalam rentang yang diberikan pada set pelatihan, _library_ ini memiliki range default antara 0 dan 1. Normalisasi bertujuan agar model dapat mengenali pola-pola pada data sehingga menghasilkan prediksi lebih baik.
 
 ## Modeling
 
@@ -182,7 +176,7 @@ Algoritma K-NN merupakan algoritma yang cara kerjanya yaitu membandingkan jarak 
 - Kelemahan
   - Jumlah fitur atau dimensi yang besar
   - Memakan waktu lama jika dataset sangat besar
-  - Jumlah sample meningkat secara exponensial seiring dengan jumlah dimensi.
+  - Jumlah sampel meningkat secara eksponensial seiring dengan jumlah dimensi.
 
 **Random Forest**
 
@@ -197,11 +191,11 @@ Random forest merupakan salah satu algoritma yang sering digunakan karena cukup 
 * Keuntungan
 
   - cukup sederhana namun memiliki stabilitas yang baik.
-  - Dapat digunkan dengan baik pada dataset berukuran besar.
+  - Dapat digunakan dengan baik pada dataset berukuran besar.
   - memiliki pengklasifiksian yang akurat.
 
 * Kelemahan
-  - Overviting untuk kumpulan data yang mengandung noise.
+  - Overfiting untuk kumpulan data yang mengandung noise.
   - Tidak bisa memperbaiki model yang dihasilkan secara berulang.
 
 **Boosting**
@@ -218,14 +212,14 @@ Berikut parameter yang digunakan dalam model ini.
   - Mudah diimplementasikan.
 
 * Kelemahan
-  - Overviting untuk kumpulan data yang mengandung noise.
+  - Overfiting untuk kumpulan data yang mengandung noise.
   - Waktu komputasi yang lama.
 
 ## Evaluation
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
 
-$$ MSE = {\sum_{i=1}^n \left(At - Ft\right)^2 \over N} $$
+$$ MSE = {\sum\_{i=1}^n \left(At - Ft\right)^2 \over N} $$
 
 - dimana:
   - At = Nilai Aktual permintaan
@@ -248,11 +242,11 @@ Tabel 3. Hasil Prediksi
 | ---- | ----- | ------------ | ----------- | ----------------- |
 | 7295 | 1.44  | 1.4          | 1.3         | 1.1               |
 
-Pada Tabel 3 memberikan hasil nilai prediksi dari algoritma KNN paling bik dan mendekati nilai sebenarnya.
+Pada Tabel 3 memberikan hasil nilai prediksi dari algoritma KNN paling baik dan mendekati nilai sebenarnya.
 
 Berdasarkan uraian pada laporan di atas, dapat disimpulkan bahwa model yang telah dibuat dapat memprediksi harga alpukat, dan hasil prediksi terbaik yaitu menggunakan algoritma KNN yang memiliki nilai paling mendekati nilai sebenarnya.
 
 ### Referensi
 
-- Santosa, Yohanes Tri. 2022. "10 Negara Tebesar Penghasil Alpukat di Dunia" The Agriculture News. di akses melalui (https://theagrinews.com/10-negara-penghasil-alpukat-terbesar-di-dunia/)
+- Santosa, Yohanes Tri. 2022. "10 Negara Terbesar Penghasil Alpukat di Dunia" The Agriculture News. di akses melalui (https://theagrinews.com/10-negara-penghasil-alpukat-terbesar-di-dunia/)
 - Production of Avocados. 2018. Food and Agriculture Organiztion di akses melalui (https://www.fao.org/faostat/en/#data/QC/visualize)
