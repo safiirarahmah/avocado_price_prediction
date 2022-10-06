@@ -132,6 +132,7 @@ Karena terdapat hubungan value yang berniali 0 antara fitur _Total Bags_, _Small
 - Memvisualisasikan data Avocado dengan boxplot untuk mendeteksi _outliers_ pada beberapa fitur numerik.
 
   ![image](https://user-images.githubusercontent.com/83525234/193988867-ced2a289-4629-43ef-9717-008b591555cd.png)
+  
   Gambar 5. Outlier pada fitur Average Price
 
   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur _Average Price_. Menggunakan cara yang sama ditemukan pula outlier pada beberapa fitur numerik lain yaitu pada _Total Bags_ dan _Small Bags_.
@@ -219,7 +220,7 @@ Berikut parameter yang digunakan dalam model ini.
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
 
-$$ MSE = {\sum\_{i=1}^n \left(At - Ft\right)^2 \over N} $$
+$$ MSE = {\sum_{i=1}^n \left(At - Ft\right)^2 \over N} $$
 
 - dimana:
   - At = Nilai Aktual permintaan
