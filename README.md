@@ -110,6 +110,8 @@ Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 
 Gambar 3. Matrik Korelasi Untuk Fitur Numerik
 
+
+
 ## Data Preparation
 
 **Mengatasi Missing Value**
@@ -125,7 +127,7 @@ Tujuan dari proses _missing value_ yaitu agar dataset menjadi bersih dari fitur 
 
 - Menangani _Missing Value_ dengan menghapus fitur yang bernilai 0
 
-Karena terdapat hubungan value yang berniali 0 antara fitur _Total Bags_, _Small Bags_ serta _Large Bags_. Maka sampel dengan nilai 0 pada _Total Bags_, _Small Bags_ dan _Large Bags_ akan dihapus.
+Karena terdapat hubungan value yang bernilai 0 antara fitur _Total Bags_, _Small Bags_ serta _Large Bags_. Maka sampel dengan nilai 0 pada _Total Bags_, _Small Bags_ dan _Large Bags_ akan dihapus.
 
 **Menangani _oulier_**
 
@@ -138,15 +140,16 @@ Karena terdapat hubungan value yang berniali 0 antara fitur _Total Bags_, _Small
   Dari visualisasi tersebut dapat dilihat bahwa terdapat outlier pada fitur _Average Price_. Menggunakan cara yang sama ditemukan pula outlier pada beberapa fitur numerik lain yaitu pada _Total Bags_ dan _Small Bags_.
 
 - Mengatasi _Outlier_ dengan _IQR Method_
-  Untuk mengatasi _outlier_ pada proyek ini digunakan teknik _IQR Method_. Cara kerja dari _IQR Method_ yaitu dengan menghapus data yang berada diluar _interquartile range_. Interquartile adalah range diantara kuartil pertama(25%) dan kuartil ketiga(75%).
 
-cara kerjanya cukup, teknik library
+  Untuk mengatasi _outlier_ pada proyek ini digunakan teknik _IQR Method_. Cara kerja dari _IQR Method_ yaitu dengan menghapus data yang berada diluar _interquartile range_. Interquartile adalah range diantara kuartil pertama(25%) dan kuartil ketiga(75%).
+  
 
 **Drop data**
 
 Drop data atau menghapus data yang tidak dibutuhkan. Pada proyek ini data yang terdapat beberapa fitur yang dihapus dari dataset.
 Untuk fitur numerik XLarge dan year dihapus karena memiliki nilai korelasi yang sangat rendah terhadap model. Sedangkan fitur date, type dan region dihapus karena memiliki type data string sehingga tidak dapat diproses model.
-Proses Drop data ini bertujuan agar model dapat dilatih dengan baik untuk memprediksi data dengan hasil prediksi yang memiliki akurasi tinggi. fungs yang digunakan.
+Proses Drop data ini bertujuan agar model dapat dilatih dengan baik untuk memprediksi data dengan hasil prediksi yang memiliki akurasi tinggi. fungsi yang digunakan.
+
 
 **Split Dataset**
 
@@ -154,11 +157,13 @@ Split dataset yaitu membagi dataset menjadi data _training_ dan data _testing_. 
 
 Split data harus dilakukan sebelum proses transformasi dan normalisasi. Karena data uji (_testing_) berperan sebagai data baru, kita perlu melakukan semua proses transformasi dalam data latih. Oleh karenanya membagi datasetadalah proses pertama sebelum melakukan transformasi apa pun. Tujuannya adalah agar kita tidak mengotori data uji dengan informasi yang kita dapat dari data latih. Jika melakukan proses normalisasi sebelum training maka berpotensi menimbulkan kebocoran data (_data leakage_).
 
+
 **Normalisasi**
 
 Normalisasi data merupakan proses membuat variabel-variabel yang ada memiliki rentang nilai yang sama.
 Pada kasus ini saya mentransformasi 'x*train' menggunakan fungsi .fit_transform() dari \_library MinMaxScaler*.
 MinMax merupakan metode normalisasi yang bersifat liner dengan data aslinya. _Library MinMaxScaler_ melakukan skala dan transformasi pada setiap fitur secara individual sehingga berada dalam rentang yang diberikan pada set pelatihan, _library_ ini memiliki range default antara 0 dan 1. Normalisasi bertujuan agar model dapat mengenali pola-pola pada data sehingga menghasilkan prediksi lebih baik.
+
 
 ## Modeling
 
