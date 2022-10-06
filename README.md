@@ -219,7 +219,7 @@ Berikut parameter yang digunakan dalam model ini.
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
 
-$$ MSE = { \sum_{i=1}^n \left(At - Ft\right)^2 \over N} $$
+$$ MSE = {\sum_{i=1}^n \left(At - Ft\right)^2 \over N} $$
 
 - dimana:
   - At = Nilai Aktual permintaan
