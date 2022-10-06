@@ -31,14 +31,15 @@ Untuk itu sistem prediksi harga alpukat ini dibuat dengan tujuan agar menjadi ac
 **Informasi Dataset**
 
 Tabel 1. Informasi dataset
-| Informasi | Keterangan |
-| --------- | --------------------------------------------------------------------- |
-| Link | https://www.kaggle.com/datasets/smokingkrils/avacado-price-prediction |
-| Nama Dataset | Avocado Price Prediction |
-| Usability | 7.06 |
-| Jumlah Data | 18249 |
-| Jumlah Kolom | 14 |
-| Jumlah fitur | 13 |
+
+| Informasi    | Keterangan                                                            |
+| ------------ | --------------------------------------------------------------------- |
+| Link         | https://www.kaggle.com/datasets/smokingkrils/avacado-price-prediction |
+| Nama Dataset | Avocado Price Prediction                                              |
+| Usability    | 7.06                                                                  |
+| Jumlah Data  | 18249                                                                 |
+| Jumlah Kolom | 14                                                                    |
+| Jumlah fitur | 13                                                                    |
 
 Dataset yang saya gunakan merupakan dataset mengenai Avocado atau buah alpukat.
 Berikut ini variabel-variable yang terdapat dalam dataset
@@ -92,6 +93,7 @@ Berikut ini uraiannya:
   - untuk menunjukan hubungan pada suatu fitur.
 
   ![image](https://user-images.githubusercontent.com/83525234/193973858-f51adc67-2b28-4b95-9b3e-3d9df7403633.png)
+  
   Gambar 1. Histogram Univariate Analysis
 
 - Multivariate Analysis
@@ -99,11 +101,13 @@ Berikut ini uraiannya:
   - untuk menunjukkan hubungan antara dua atau lebih variabel pada data
 
   ![image](https://user-images.githubusercontent.com/83525234/193973993-3fb0aa57-11c9-479b-aacf-8a1e923a3c42.png)
+  
   Gambar 2. Histogram Multivariate Analysis
 
 Visualisasi berikut menunjukkan korelasi atau hubungan antara tiap fitur.
 
 ![image](https://user-images.githubusercontent.com/83525234/193878390-97f5133d-54af-4753-b254-86cd0ec8683f.png)
+
 Gambar 3. Matrik Korelasi Untuk Fitur Numerik
 
 ## Data Preparation
@@ -215,7 +219,7 @@ Berikut parameter yang digunakan dalam model ini.
 
 Dalam model machine learning ini, metrik yang akan digunakan adalah MSE atau _Mean Squared Error_ yaitu metriks yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi untuk melihat seberapa dekat hasil prediksi dengan titik data.
 
-------Tulis ulang formulanya-----
+$$ MSE = {\sum\_{i=1}^n \left(At - Ft\right)^2 \over N} $$
 
 - dimana:
   - At = Nilai Aktual permintaan
@@ -227,6 +231,7 @@ Penerapan dalam metode pengembangan model, yaitu melakukan evaluasi menggunakan 
 Hasil visualisasi _Mean Square Error_ (MSE)
 
 ![image](https://user-images.githubusercontent.com/83525234/193869468-7acda4e2-0138-4154-9ca7-bb332a2b0e56.png)
+
 Gambar 6. visualisasi _Mean Square Error_
 
 Dari visualisasi di atas dapat dilihat MSE pada algoritma KNN menunjukkan nilai paling kecil yang artinya memiliki kesalahan paling kecil dibandingkan dengan algoritma _random forest_ dan _boosting_.
@@ -240,3 +245,8 @@ Tabel 3. Hasil Prediksi
 Pada Tabel 3 memberikan hasil nilai prediksi dari algoritma KNN paling bik dan mendekati nilai sebenarnya.
 
 Berdasarkan uraian pada laporan di atas, dapat disimpulkan bahwa model yang telah dibuat dapat memprediksi harga alpukat, dan hasil prediksi terbaik yaitu menggunakan algoritma KNN yang memiliki nilai paling mendekati nilai sebenarnya.
+
+### Referensi
+
+- Santosa, Yohanes Tri. 2022. "10 Negara Tebesar Penghasil Alpukat di Dunia" The Agriculture News. di akses melalui (https://theagrinews.com/10-negara-penghasil-alpukat-terbesar-di-dunia/)
+- Production of Avocados. 2018. Food and Agriculture Organiztion di akses melalui (https://www.fao.org/faostat/en/#data/QC/visualize)
